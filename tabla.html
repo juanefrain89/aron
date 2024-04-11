@@ -1,0 +1,88 @@
+import React, { Fragment, useState } from "react";
+import "./estilos.css";
+
+const J = () => {
+  const [contador, setContador] = useState(1);
+  const [citas, setCitas] = useState([
+    { id: contador, cliente: "Martin", hora: 1, minutos: 0 },
+    { id: contador + 1, cliente: "Jose", hora: 1, minutos: 30 },
+  ]);
+  const [minutosInput, setMinutosInput] = useState(0);
+  const [citaAtrasadaId, setCitaAtrasadaId] = useState(null);
+
+  const atrasarCita = (e, id) => {
+    setMinutosInput(parseInt(e.target.value, 10));
+    setCitaAtrasadaId(id);
+  };
+
+  const confirmarAtraso = () => {
+    setCitas((prevCitas) => {
+      const nuevasCitas = prevCitas.map((cita) => {
+        if (cita.id >= citaAtrasadaId) {
+          return {
+            ...cita,
+            minutos: cita.minutos + minutosInput,
+          };
+        } else {
+          return cita;
+        }
+      });
+
+      setContador((prevContador) => prevContador + 2);
+
+      return nuevasCitas;
+    });
+  };
+
+  return (
+    <Fragment>
+      <div className="padre">
+        <div className="as">
+          <div className="l">
+            <p>hola</p>
+            <p>hdhdh</p>
+            <p>udjdj</p>
+          </div>
+        </div>
+
+        <div className="container">
+          <div className="der">
+            <h1 className="a">Citas del día</h1>
+            <table>
+              <thead>
+                <tr>
+                  <th>Cliente</th>
+                  <th>Hora de cita</th>
+                  <th>Atrasar</th>
+                </tr>
+              </thead>
+              <tbody>
+                {citas.map((cita) => (
+                  <tr key={cita.id}>
+                    <td>{cita.cliente}</td>
+                    <td>
+                      {cita.hora}:{cita.minutos}
+                    </td>
+                    <td>
+                      <input
+                        type="number"
+                        onChange={(e) => atrasarCita(e, cita.id)}
+                        placeholder="Atrasar en minutos"
+                      />
+                      <button onClick={confirmarAtraso}>Confirmar</button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <div>
+              <h1>Atrasar cita</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Fragment>
+  );
+};
+
+export default J;

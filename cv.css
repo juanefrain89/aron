@@ -1,0 +1,174 @@
+#estilo1 {
+    background-color: black;
+    color: white;
+}
+
+#encabezado {
+    display: flex;
+    align-items: center;
+    background-color: skyblue;
+}
+
+#imagen-contenida {
+    margin-right: 20px;
+}
+
+#izq {
+    height: 75%;
+    width: 33.333%;
+    float: left;
+    background-color: lightsteelblue;
+}
+
+#der {
+    height: 75%;
+    width: 33.333%;
+    float: left;
+    background-color: lightsteelblue;
+}
+
+#centro {
+    height: 75%;
+    width: 33.333%;
+    float: left;
+    background-color: lightsteelblue;
+}
+
+#izq::-webkit-scrollbar {
+    width: 12px;
+}
+
+#izq::-webkit-scrollbar-thumb {
+    background-color: #6a6a6a;
+    border-radius: 6px;
+    border: 3px solid #101010;
+}
+
+#der::-webkit-scrollbar {
+    width: 12px;
+}
+
+#der::-webkit-scrollbar-thumb {
+    background-color: #6a6a6a;
+    border-radius: 6px;
+    border: 3px solid #101010;
+}
+
+ #izq,
+#der,
+#centro {
+    overflow-y: scroll;
+    height: 400px;
+}
+
+
+#aaron {
+    margin-right: 20px;
+    border-radius: 100px;
+}
+img {
+    border-radius: 100px;
+}
+#daniel
+{
+    margin-right: 20px;
+    border-radius: 100px;
+}
+#juan
+{
+    margin-right: 20px;
+    border-radius: 100px;
+}
+#pie
+{
+    background-color: antiquewhite;
+}
+
+#encabezado{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+#integrantes
+{
+color: indianred;
+font-size: 40px;
+
+}
+#pieizq
+{
+height: 75%;
+width: 100%;
+float: left;
+background-color:black;
+color: white;
+
+}
+#prueba{
+color: gainsboro;
+}
+#p{
+    text-align: justify;
+    text-transform: capitalize;
+    line-height: 10px;
+    letter-spacing: normal;
+}
+
+/* Estilos generales */
+
+
+@media screen and (max-width: 1200px) {
+    
+    header {
+        text-align: center;
+    }
+    
+    .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nombreempresa {
+        margin-top: 10px;
+    }
+    
+    nav {
+        margin-top: 20px;
+    }
+    
+    nav a {
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    
+    #izq, #der, #centro {
+        width: 100%;
+        float: none;
+        height: auto;
+        overflow-y: visible;
+    }
+    
+    
+    #aaron, #daniel, #juan {
+        margin-right: 0;
+    }
+    
+   
+    footer .footer {
+        text-align: center;
+    }
+    
+    footer .footer-links {
+        margin-bottom: 20px;
+    }
+}
+
+
+@media screen and (max-width: 200px) {
+    /* Estilos para el pie de página */
+    footer .footer-links {
+        font-size: 12px;
+    }
+}
